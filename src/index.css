@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Clash Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-ink: #1e1e2f;
+  --color-ink-soft: #666666;
+  --color-ink-faint: #9a9aa6;
+  --color-line: #e6e6ea;
+  --color-line-strong: #cfcfcf;
+  --color-ground: #ffffff;
+  --color-ground-soft: #fafafa;
+
+  --color-violet-50: #f3efff;
+  --color-violet-100: #e6dcff;
+  --color-violet-200: #c9b6ff;
+  --color-violet-500: #642eff;
+  --color-violet-600: #5a24f0;
+  --color-violet-700: #4c1ed1;
+
+  --color-mint-100: #e4ffd9;
+  --color-mint-700: #0c8233;
+
+  --radius-card: 20px;
+  --radius-pill: 150px;
+}
+
+html, body, #root { min-height: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+.rise { animation: rise 260ms ease-out both; }
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(10px, -8px) scale(1.06); }
+}
+.blob { animation: blob 9s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .blob { animation: none; }
+}
